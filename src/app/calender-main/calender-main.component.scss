@@ -1,0 +1,193 @@
+.main{
+  max-width: 360px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  background-color: #515151;
+  color: rgb(235, 255, 255);
+  text-align: center;
+  vertical-align: middle;
+  height: 55px;
+  line-height: 55px;
+  font-size: 15px;
+  span {
+    float: right;
+    margin-right: 20px;
+  }
+}
+
+main > div {
+  display: inline-block;
+}
+
+.body {
+  .week {
+    padding: 0 1%;
+    .col {
+      display: inline-block;
+      width: 14%;
+      height: 25px;
+      line-height: 25px;
+      vertical-align: baseline;
+      text-align: center;
+      color: #434343;
+    }
+  }
+  .current-week, .current-mounth {
+    padding: 5px 0;
+    .col {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin: 5px 5px;
+      line-height: 40px;
+      vertical-align: bottom;
+      text-align: center;
+      font-size: 16px;
+    }
+    .col.select {
+      background-color: #2a579a;
+      border-radius: 50%;
+      color: #fff;
+    }
+    .col.is-today {
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px #2a579a;
+      color: #2a579a;
+    }
+    .col .mark {
+      width: 6px;
+      height: 6px;
+      border-radius: 3px;
+      background-color: #ff9900;
+      float: right;
+      margin: -10px 17px;
+    }
+  }
+  .more {
+    text-align: center;
+    span {
+      display: inline-block;
+      transform: rotate(90deg);
+      color: #2a579a;
+    }
+  }
+  .toolbar {
+    height: 40px;
+    text-align: center;
+    box-shadow: -5px 2px 8px #aaaaaa;;
+    div.item {
+      margin: 0 10px;
+      padding: 0 10px;
+      display: inline-block;
+      line-height: 40px;
+    }
+    div.select {
+      color: #2a579a;
+      font-weight: 600;
+    }
+    .select-bottom {
+      display: block;
+      margin: -3px 7px 0 7px;
+      height: 3px;
+      background-color: #2a579a;
+
+    }
+  }
+}
+
+.bottom {
+  bottom: 1px;
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  line-height: 15px;
+  border-bottom: 1px solid #aaaaaa;
+  box-shadow: -5px -1px 5px #aaaaaa;
+  .item {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+    padding: 2px 5px;
+    .icon {
+      width: 20px;
+      height: 20px;
+      background-color: #aaaaaa;
+      display: inline-block;
+    }
+    .text {
+      display: block;
+    }
+  }
+  .select {
+    color: #2a579a;
+    .icon {
+      background-color: #2a579a;
+    }
+  }
+}
+
+.remind-list {
+  max-width: 360px;
+  height: calc(100vh - 241px);
+  overflow-y: auto;
+  padding: 10px 0;
+  // background-color: #efefef;
+  .remind {
+    height: 75px;
+    padding: 5px 15px 5px 15px;
+    // background-color: #fff;
+    .remind-title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 22px;
+      display: inline-block;
+      max-width: 300px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .remind-time {
+      display: block;
+      float: right;
+      margin: 2px 0 0 5px;
+      color: #515151;
+      font-size: 12px;
+    }
+    .remind-content {
+      max-width: 360px;
+      color: #999999;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .remind-job {
+      display: inline-block;
+    }
+    .remind-job.style1 {
+      color: #0099cc;
+    }
+    .remind-job.style2 {
+      color: #ff9900;
+    }
+    .detail {
+      display: block;
+      float: right;
+      margin: 2px 0 0 5px;
+      color: #515151;
+      font-size: 20px;
+      margin-top: -5px;
+      font-weight: 800;
+    }
+  }
+  .remind:not(:last-child) {
+    border-bottom: 1px solid #aaaaaa;
+  }
+}
+.remind-list.mounth {
+  height: calc(100vh - 445px);
+}

@@ -27,9 +27,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/resources/plugin/bootstrap/3.3.7/css/bootstrap.min.css"
+
             ],
-            "scripts": [],
+            "scripts": [
+              "src/resources/plugin/jquery/1.12.4/jquery.min.js",
+              "src/resources/plugin/bootstrap/3.3.7/js/bootstrap.min.js"
+
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

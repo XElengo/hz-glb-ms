@@ -1,0 +1,68 @@
+<div class="main">
+
+  <div class="header">
+    2019-04-24
+    <span (click)="toToday()">今天</span>
+  </div>
+  <xtn-scroll (onSlideLeft)="onSlideLeft()" (onSlideRight)="onSlideRight()">
+    <div class="body">
+        <div class="week">
+          <div class="col">日</div>
+          <div class="col">一</div>
+          <div class="col">二</div>
+          <div class="col">三</div>
+          <div class="col">四</div>
+          <div class="col">五</div>
+          <div class="col">六</div>
+        </div>
+        <ng-container *ngIf="showWeek">
+          <div class="current-week">
+              <div class="col" *ngFor="let item of timelist" [ngClass]="{'select': item.status, 'is-today': item.isToday && !item.status}" (click)="selectDay(item)"  >
+                  {{item.day}}
+                <div class="mark" *ngIf="item.mark"></div>
+              </div>
+          </div>
+          <div class="more"><span>》</span></div>
+        </ng-container>
+        <ng-container *ngIf="showMounth">
+          <div class="current-mounth">
+              <div class="col" *ngFor="let item of dayList" [ngClass]="{'select': item.status, 'is-today': item.isToday && !item.status}" (click)="selectMounthDay(item)"  >
+                  {{item.day}}
+                <div class="mark" *ngIf="item.mark"></div>
+              </div>
+          </div>
+          <div class="more"><span>《</span></div>
+        </ng-container>
+        <div class="toolbar">
+            <div class="item " *ngFor="let item of toolbarList"  [ngClass]="{'select': item.selected}" (click)="toggleToolbar(item)" >
+              <span class="text">{{item.name}}</span>
+              <span *ngIf="item.selected"  class="select-bottom"></span>
+            </div>
+        </div>
+    </div>
+  </xtn-scroll>
+
+  <div class="remind-list" [ngClass]="{'mounth': showMounth}">
+    <div class="remind" *ngFor="let item of remindList" >
+      <span class="remind-title">{{item.remindTitle}}</span>
+      <div class="remind-time">{{item.remindTime}}</div>
+      <div class="remind-content">
+          {{item.remindContent}}
+      </div>
+      <div class="remind-job" [ngClass]="{'style1': item.remondJob === '经办人', 'style2': item.remondJob === '交办人'}">
+          我的角色：<span>{{item.remondJob}}</span>
+      </div>
+      <div class="detail">...</div>
+    </div>
+  </div>
+  <div class="bottom">
+    <ng-container *ngFor="let item of bottomButtonList, index as i">
+      <div class="item" (click)="toggleMenu(item)" [ngClass]="{'select': item.selected}">
+        <div class="icon"></div>
+        <div class="text">{{item.name}}</div>
+      </div>
+    </ng-container>
+
+  </div>
+</div>
+

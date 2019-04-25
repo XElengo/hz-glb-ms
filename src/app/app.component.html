@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -18,4 +18,17 @@
   </li>
 </ul>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+<div class="button-group">
+  <button (click)="showCalender()" >日历</button>
+  <button (click)="showClock()" >时钟</button>
+</div>
+<ng-container *ngIf="showCale">
+  <xtn-scroll  (onRefresh)="onScrollRefresh()" (onNextPage)="onScrollNextPage()" (onSlideLeft)="onSlideLeft()" (onSlideRight)="onSlideRight()">
+    <app-calender-main [scrollType]='scrollType'></app-calender-main>
+  </xtn-scroll>
+</ng-container>
+<div [hidden]="showCale">
+  <app-clock></app-clock>
+</div>
+
